@@ -1,45 +1,149 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>仲夏の网</title>
+    <title>Flex 布局</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid black;
+      } */
+      .yinying {
+        box-shadow: rgb(0 0 0 / 20%) 0px 4px 2px -2px,
+          rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 2px 6px 0px;
+      }
+      .flex {
+        display: flex;
+      }
+      .baise {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daohang {
+        padding: 10px 20px;
+        border-bottom: 2px solid #eee;
+        font-size: 16px;
+        color: #666;
+      }
+      .yuanjiao {
+        border-radius: 20px;
+      }
+      .xiaoyuanjiao {
+        border-radius: 10px;
+      }
+      .weiruanyahei {
+        font-family: "weiruanyahei";
+      }
+    </style>
   </head>
-  <body style="margin: 0">
-    <div style="background-color: #f1f1f1; text-align: center; padding: 20px">
-      <img
-        alt="我想吃的大碗面"
-        src="https://img.zcool.cn/community/0112d85d1b770da801213763cf68ad.jpg@1280w_1l_2o_100sh.jpg"
-        width="256px"
-        height="177.6px"
-      />
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="baise yinying">
+      <!-- 头像栏 -->
+      <div
+        style="padding: 40px; align-items: center; justify-content: center"
+        class="flex"
+      >
+        <img
+          src="zhongxia.png"
+          alt="仲夏"
+          width="70px"
+          height="70px"
+          class="yinying xiaoyuanjiao"
+        />
+        <div
+          style="font-size: 20px; font-weight: bold; margin-left: 10px"
+          class="weiruanyahei"
+        >
+          仲夏の网
+        </div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <!-- 导航条 -->
+        <div class="flex1">
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+          <div style="height: 50px" class="daohang yinying yuanjiao">导航</div>
+        </div>
+      </div>
     </div>
-    <div
-      style="
-        max-width: 760px;
-        margin: 30px auto;
-        padding: 15px;
-        line-height: 1.8;
-        text-align: center;
-      "
-    >
-      <h1>您好，欢迎来到此处！</h1>
-      <p style="color: red">内容未定，随时更改。</p>
-      <p>鸡你太美</p>
-      <p>WZY是<d>老狗</d>😜，WWH是<d>新狗</d>~🤣</p>
-      <p>我也想吃陕西大碗面，呜呜饿晕了，速速给我搞点回来啊</p>
-      <p>带不回来你必是狗（带回来也是）</p>
-    </div>
-    <div
-      style="
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 40px;
-        font-size: 12px;
-      "
-    >
-      <p>版权所有：ZhongXia</p>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="baise yinying"></div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="flex1 flex">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex">
+            <!-- 数据块 -->
+            <div
+              style="height: 120px"
+              class="flex1 baise mgr8 yinying yuanjiao"
+            ></div>
+            <div
+              style="height: 120px"
+              class="flex1 baise mgr8 yinying yuanjiao"
+            ></div>
+            <div
+              style="height: 120px"
+              class="flex1 baise mgr8 yinying yuanjiao"
+            ></div>
+            <div
+              style="height: 120px"
+              class="flex1 baise yinying yuanjiao"
+            ></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!--列表项-->
+            <div
+              style="height: 180px"
+              class="baise mgt8 yinying yuanjiao"
+            ></div>
+            <div
+              style="height: 180px"
+              class="baise mgt8 yinying yuanjiao"
+            ></div>
+            <div
+              style="height: 180px"
+              class="baise mgt8 yinying yuanjiao"
+            ></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 200px" class="baise yinying yuanjiao"></div>
+          <!-- 消息区 -->
+          <div style="height: 500px" class="baise mgt8 yinying yuanjiao"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
